@@ -1,7 +1,7 @@
 on: [push]
 jobs:
   Uploading-job:  
-    name: 'Upload build on Sofy'
+    name: 'Upload build on Sofy3.0'
     runs-on: ubuntu-latest
     steps:
       - name: 'checkout'
