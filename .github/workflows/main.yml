@@ -9,5 +9,5 @@ jobs:
       - name: 'Upload build' 
         env:
           build_path: 'Byte.ipa'
-          subscription_key: 80b30c4e-c920-40a7-9682-6ad2e779a67f
+          subscription_key: a67b358c-b3bb-4737-bee3-db491e6d2bcc
         uses: 'SOFYAIOFFICIAL/sofy-upload-github-actions@main'
