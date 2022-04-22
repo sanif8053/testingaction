@@ -8,6 +8,6 @@ jobs:
         uses: actions/checkout@v2
       - name: 'Upload build' 
         env:
-          build_path: 'Byte.ipa'
+          build_path: 'sas/Byte.ipa'
           subscription_key: 80b30c4e-c920-40a7-9682-6ad2e779a67f
         uses: 'SOFYAIOFFICIAL/sofy-upload-github-actions@main'
