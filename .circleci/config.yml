@@ -14,7 +14,7 @@ jobs:
           # Add steps to build your app here. After your app building process is complete, add the following step with your 'Sofy Subscription Key'
           # 'Build Path' to upload the build directly to SOFY AI
           - sofy/connect_sofy:
-               subscription_key: '11c2a4ee-49e8-4b4e-b8b7-d897cad510ce'
+               subscription_key: '11c2a4ee-49e8-4b4e-b8b7-d897cad510ca'
                build_path: 'Byte.ipa'
 workflows:
   # Name the workflow "appbuild"
