@@ -15,7 +15,7 @@ jobs:
           # 'Build Path' to upload the build directly to SOFY AI
           - sofy/connect_sofy:
                subscription_key: "80b30c4e-c920-40a7-9682-6ad2e779a67f"
-               build_path: "/Byte.ipa"
+               build_path: "../Byte.ipa"
 workflows:
   # Name the workflow "appbuild"
   appbuild:
