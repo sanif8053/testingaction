@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - sofy/connect_sofy:
-               subscription_key: "17743992-4182-465e-89a2-6b950c8fb56e"
+               subscription_key: "80b30c4e-c920-40a7-9682-6ad2e779a67f"
                build_path: "Byte.ipa"    
 
 # Invoke jobs via workflows
