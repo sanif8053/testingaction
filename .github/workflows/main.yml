@@ -11,6 +11,13 @@ jobs:
         env:
           build_path: 'Byte.ipa'
           subscription_key: 80b30c4e-c920-40a7-9682-6ad2e779a67f
-        uses: 'SOFYAIOFFICIAL/sofy-upload-github-actions@main'
+        uses: SOFYAIOFFICIAL/sofy-upload-github-actions@main
+       - name: Get Token    
+    run: |
+      response = $(curl --location --request POST 'https://api.sofy.ai/api/CICD/ScheduleAutomatedTestRun' --header 'Content-Type: application/json'     --data-raw '{
+    "APIKey":"80b30c4e-c920-40a7-9682-6ad2e779a67f",
+    "ScheduledID":898
+    }')         
+      echo "response from curl= $response"  
         
 
