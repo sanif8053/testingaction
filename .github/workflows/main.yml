@@ -9,12 +9,10 @@ jobs:
       - name: 'Upload build' 
         env:
           build_path: 'Byte.ipa'
-          subscription_key: 80b30c4e-c920-40a7-9682-6ad2e779a67f
+          subscription_key: 025C571D-E5BA-44FA-A2EB-57F313C9EBCF
+          application_guid: 72AC706F-A924-4C55-97DE-253C5E60FFC0
+          certificate_name: 'Trueblue Srl'
         uses: SOFYAIOFFICIAL/sofy-upload-github-actions@main
-      - name: 'Get Token'    
-        run: |
-            response = $(curl --location --request POST 'https://api.sofy.ai/api/CICD/ScheduleAutomatedTestRun' --header 'Content-Type: application/json'     --data-raw '{
-          "APIKey":"80b30c4e-c920-40a7-9682-6ad2e779a67f", "ScheduledID":898}')         
-            echo "response from curl= $response"  
+      
         
 
