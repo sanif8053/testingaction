@@ -1,6 +1,6 @@
 on: [push]
 jobs:
-  Uploading-job:  
+  Uploading-job:
     name: 'Upload build on Sofy3.0'
     runs-on: ubuntu-latest
     steps:
@@ -8,13 +8,8 @@ jobs:
         uses: actions/checkout@v2
       - name: 'Upload build'
         uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
-        env:
+        with:
           build_path: 'Byte.ipa'
-          subscription_key: 025C571D-E5BA-44FA-A2EB-57F313C9EBCF
-          application_guid: 72AC706F-A924-4C55-97DE-253C5E60FFC0
-      - name: Debug certificate_name
-        run: echo "$certificate_name"
-        env:
-          certificate_name: "Trueblue Srl"
-   
-          
+          subscription_key: '025C571D-E5BA-44FA-A2EB-57F313C9EBCF'
+          application_guid: '72AC706F-A924-4C55-97DE-253C5E60FFC0'
+          certificate_name: 'Trueblue%20Srl'  # URL-encoded value
