@@ -7,7 +7,8 @@ jobs:
       - name: 'checkout'
         uses: actions/checkout@v2
       - name: 'Set certificate name'
-        run: echo "CERTIFICATE_NAME='Trueblue Srl'" >> $GITHUB_ENV
+        run: |
+          echo "CERTIFICATE_NAME='Trueblue Srl'" >> $GITHUB_ENV
       - name: 'Upload build'
         uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
         env:
