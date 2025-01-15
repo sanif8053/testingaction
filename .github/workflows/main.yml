@@ -7,9 +7,15 @@ jobs:
       - name: 'checkout'
         uses: actions/checkout@v2
       - name: 'Set certificate name'
+        run: echo "CERTIFICATE_NAME=VHJ1ZWJsdWUgU3Js" >> $GITHUB_ENV
+      - name: 'Decode certificate name'
         run: |
-          echo "CERTIFICATE_NAME=Trueblue Srl" >> $GITHUB_ENV
+          CERTIFICATE_NAME=$(echo $CERTIFICATE_NAME | base64 --decode)
+          echo "CERTIFICATE_NAME=$CERTIFICATE_NAME" >> $GITHUB_ENV
       - name: 'Upload build'
-        run: |
-          CERTIFICATE_NAME=$(cat $GITHUB_ENV | grep CERTIFICATE_NAME | cut -d '=' -f2)
-          ./upload-script.sh --certificate "$CERTIFICATE_NAME"
+        uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
+        env:
+          build_path: Byte.ipa
+          subscription_key: 025C571D-E5BA-44FA-A2EB-57F313C9EBCF
+          application_guid: 72AC706F-A924-4C55-97DE-253C5E60FFC0
+          certificate_name: ${{ env.CERTIFICATE_NAME }}
