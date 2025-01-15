@@ -4,17 +4,14 @@ jobs:
     name: 'Upload build on Sofy3.0'
     runs-on: ubuntu-latest
     steps:
+      - name: Set certificate_name
+        run: echo "certificate_name='Trueblue Srl'" >> $GITHUB_ENV
       - name: 'checkout'
         uses: actions/checkout@v2
       - name: 'Upload build' 
-        run: |
-          curl --location --request POST 'https://public.sofy.ai/parser-microservice/build-upload' \
-          --header "x-sofy-auth-key: $subscription_key" \
-          --form "applicationFile=@$build_path" \
-          --form "ApplicationGUID=$application_guid" \
-          --form "CertificateName=$certificate_name"
         env:
           build_path: 'Byte.ipa'
           subscription_key: 025C571D-E5BA-44FA-A2EB-57F313C9EBCF
           application_guid: 72AC706F-A924-4C55-97DE-253C5E60FFC0
-          certificate_name: "Trueblue Srl"
+          certificate_name: "${{ env.certificate_name }}"
+        uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
