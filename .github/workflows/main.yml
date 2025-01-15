@@ -4,14 +4,13 @@ jobs:
     name: 'Upload build on Sofy3.0'
     runs-on: ubuntu-latest
     steps:
-      - name: Set certificate_name
-        run: echo "certificate_name='Trueblue Srl'" >> $GITHUB_ENV
       - name: 'checkout'
         uses: actions/checkout@v2
-      - name: 'Upload build' 
+      - name: 'Upload build'
+        run: |
+          echo "certificate_name='Trueblue Srl'" >> $GITHUB_ENV
+        uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
         env:
           build_path: 'Byte.ipa'
           subscription_key: 025C571D-E5BA-44FA-A2EB-57F313C9EBCF
           application_guid: 72AC706F-A924-4C55-97DE-253C5E60FFC0
-          certificate_name: "${{ env.certificate_name }}"
-        uses: 'SOFYDEVELOPER/sofy-app-upload-github-action@main'
